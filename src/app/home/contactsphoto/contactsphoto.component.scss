@@ -1,0 +1,44 @@
+@import "../../variables";
+.bg-foot2{
+    background-image:url("../../../assets/images/bg10.png");
+    height: 220px;
+    padding-left: 160px;
+}
+.foot{
+    color:$whitecolor;
+    font-size: 19px;
+    font-weight: $typeBold;
+    margin-top: 20px;
+    margin-left: 100px;
+} 
+.foot2{
+    color:$whitecolor;
+    font-size: 19px;
+    font-weight: $typeBold;
+    margin-top: 20px;
+    padding-left: 140px;
+    
+}
+
+
+.p{
+    padding-left: 180px;
+    margin-top:40px;
+    margin-bottom: 15px;
+}
+.t{
+    padding-left: 180px;
+    margin-top:40px;
+    
+}
+.m{
+    padding-left: 70px;
+    margin-top:40px;
+}
+.foot5{
+    color:white;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-left: 20px;
+}

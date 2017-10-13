@@ -1,0 +1,57 @@
+@import "../../variables";
+bdy {
+	font-size: 12px;
+	font-family: $printSS;
+	background: #2c3e50;
+}
+
+        #aboutus{
+            margin-left: 95px;
+            margin-top: 10px;
+            color: $whitecolor;
+            font-size:2em;
+        }
+        #aboutur-text{
+            margin-top: 10px;
+            color:$whitecolor;
+            font-size: 1em;
+            
+        }       
+
+
+        .bg{
+            background-color: #F7F7F7;
+            height: 500px;
+        }
+        .img{
+            background-image: url("../../../assets/images/home-agency.jpg");
+            width: 400px;
+            height: 360px;
+            margin-left: 110px;
+            padding-top: 100px;
+        }
+        .inf{
+            background-image: url("../../../assets/images/bg2.png");
+            width: 400px;
+            height: 360px;
+        }
+        .block{
+            margin-top: 70px;
+        }
+        .text1{
+            padding: 90px 0 20px 0;
+            margin: 0;
+        }
+        .text2{
+            color:$be;
+        }
+        .text3{
+            padding-right:40px;
+        }
+        .text4{
+             padding: 60px 0 20px 0;
+            margin: 0;
+        }
+        .text5{
+            color:$be;
+        }

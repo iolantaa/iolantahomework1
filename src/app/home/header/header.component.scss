@@ -1,0 +1,22 @@
+@import "../../variables";
+#headerdiv{
+	background-color:$darkblue;
+	width:calc(100%-40px);
+	height:35px;
+	padding-left:100px;
+	padding-top:5px;
+	padding-bottom:5px;
+	margin:0;
+	.top_hrefs{
+		width:20px;
+		height:20px;
+		margin-left:5px;
+		margin-right:5px;
+	}
+}
+/*.top_hrefs{
+	width:20px;
+	height:20px;
+	margin-left:5px;
+	margin-right:5px;
+}*/

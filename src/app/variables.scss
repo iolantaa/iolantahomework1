@@ -1,0 +1,22 @@
+$darkblue:darkslateblue;
+$whitecolor:#FFFFFF;
+$gray:#7d7d7d;
+$be:#BEBEBE;
+$ff:#F2F2F2;
+$inline: inline-block;
+$printSS:sans-serif;
+$typeBold:bold;
+$bborder:1px solid $ff;
+
+@mixin color-f($color)
+{
+    background-color:$color;
+}
+.retreat1{@include color-f($ff);}
+
+@mixin border-f($border)
+{
+    border:$border;
+
+}
+.retreat2{@include border-f($bborder);}
