@@ -1,6 +1,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +19,7 @@ import { PeopleblogComponent } from './home/peopleblog/peopleblog.component';
 import { ConnectsComponent } from './home/connects/connects.component';
 import { ContactsphotoComponent } from './home/contactsphoto/contactsphoto.component';
 import { EndsComponent } from './home/ends/ends.component';
+import { FormsComponent } from './home/forms/forms.component';
 
 
 @NgModule({
@@ -38,10 +40,22 @@ import { EndsComponent } from './home/ends/ends.component';
     ConnectsComponent,
     ContactsphotoComponent,
     EndsComponent,
+    FormsComponent,
    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: 'form',
+        component: FormsComponent
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: HomeComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

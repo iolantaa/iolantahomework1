@@ -1,9 +1,11 @@
 <div class="row">
-  <div class="col-sm-2">
-      <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/e.png" >
+  <div class="col-sm-2" *ngFor="let block of footpic">
+      
+      <img class="images" src={{block.ImgSrc}}/>
+      <!-- <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/e.png" class="images" >
   </div>
   <div class="col-sm-2">
-      <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/g.png" class="images2">
+      <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/g.png" class="images">
   </div>
   <div class="col-sm-2">
       <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/h.png" class="images">
@@ -13,6 +15,6 @@
   </div>
   <div class="col-sm-2">
       <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/c.png" class="images">
+  </div> -->
   </div>
-  
 </div>

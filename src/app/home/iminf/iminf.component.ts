@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IminfComponent implements OnInit {
 
+  info=[
+    {number:"35", text:" Happy Clients"},
+    {number:"18", text:" Celebration"},
+    {number:"28", text:" Projects Done"},
+    {number:"15", text:" Awards"},
+  ];
+
   constructor() { }
 
   ngOnInit() {

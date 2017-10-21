@@ -1,26 +1,54 @@
-<div class="row">
-  <div class="col-sm-12 img-port1">
-      <div class="row">
-          <div class="col-sm-2 retreat1">
-              <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/img3.png">
+<div class="row" >
+  <div class="col-sm-12 img-port1"  >
+      <div class="row"   >
+            <!-- <div class="col-sm-2 retreat1" *ngFor='let block of firstarray'>
+            <img  src={{block.ImgSrc}}/>  
+            
+            <p class="text24">{{ block.title }}</p>
+            <p class="text23">{{ block.text }}</p>
+            
+            </div> -->
+
+        <div class="retreat1" *ngFor='let block of images'> 
+               
+            <img src={{block.ImgSrc}}>
+            <p class="text24">{{ block.title }}</p>
+            <p class="text23">{{ block.text }}</p>
+      
+        </div>
+        <!-- <div class="retreat2" *ngFor='let block of images'>
+                <img src={{block.ImgSrc}}>
+                <p class="text24">{{ block.title }}</p>
+                <p class="text23">{{ block.text }}</p>
+        </div> -->
+
+       <!-- <div class="col-sm-2 retreat2" *ngFor='let block of firstarray'>
+            <img src={{block.ImgSrc}}>
+            <p class="text24">{{ block.title }}</p>
+            <p class="text23">{{ block.text }}</p>
+       </div> -->
+       
+
+          <!-- <div class="col-sm-2 retreat1">
+              <img src="../../../assets/images/img3.png">
               <p class="text24">Alex Smith</p>
               <p class="text23 text-center">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
           </div>
           <div class="col-sm-2 retreat2">
-              <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/img4.png">
+              <img src="../../../assets/images/img4.png">
               <p class="text24">Susan Tylor</p>
               <p class="text23 text-center">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
           </div>
           <div class="col-sm-2 retreat1">
-              <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/img1.png">
+              <img src="../../../assets/images/img1.png">
               <p class="text22">George Smith</p>
               <p class="text23 text-center">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
           </div>
           <div class="col-sm-2 retreat2">
-              <img src="http://newthemes.net/artim/sectors/agency/wp-content/uploads/2016/11/img2.png" class="">
+              <img src="../../../assets/images/img2.png" class="">
               <p class="text25 text-center">Lexi Tylor</p>
               <p class="text23 text-center">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
-          </div>
-      </div>
+          </div> -->
+      </div> 
   </div> 
 </div>

@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col-sm-12 img-port2">
       <div class="row">
-          <div class="col-sm-2 retreat">
-              <img src="../../../assets/images/5.png">
+          <div class="col-sm-2 retreat" *ngFor='let block of sblog'>
+              <img src={{block.ImgSrc}}/>
+
+              <!-- <img src="../../../assets/images/5.png">
           </div>
           <div class="col-sm-2 retreat">
               <img src="../../../assets/images/6.png">
@@ -12,7 +14,7 @@
           </div>
           <div class="col-sm-2">
               <img src="../../../assets/images/8.png">
-          </div>
-      </div>
+          </div>-->
+      </div> 
   </div> 
 </div>

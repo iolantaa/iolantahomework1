@@ -1,0 +1,24 @@
+<div class="reg">
+
+  
+
+<form (submit)="Registr($event)">
+	<div class="input">
+		<label>Username</label>
+		<input type="text"  name="Username" ng-model="myUser" required>
+  </div>
+  <br>
+	<div class="input">
+		<label>   Password</label>
+		<input type="password" name="password"  ng-module="user.password" required>
+  </div>
+  <br>
+	<div class="input">
+		<input type="submit" value="Sign in">
+  </div>
+  <div  class ="ucheck">
+      <button (click)="MyFunction()" class="bt">Test</button>
+      </div>
+</form>
+</div>
+

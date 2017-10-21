@@ -1,0 +1,19 @@
+.reg
+{  
+    margin-top: 50px;
+    margin-left: 100px;
+    color:blue;
+
+}
+
+
+    .bt{
+            margin-top:5px;
+            background:rgba(7, 152, 196, 0.256);
+            
+        cursor:pointer;
+        &:hover{
+            background:rgba(235, 234, 234, 0.938)
+        }
+    
+}

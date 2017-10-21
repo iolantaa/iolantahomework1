@@ -1,26 +1,36 @@
 @import "../../variables";
+.row{
+    background: $ff;
+    margin-bottom: 90px;
+
+}
 .img-port1{
-    margin-left: 230px;
+    margin-left: 310px;
     margin-top:40px;
     margin-bottom: 110px;
+    
     
 }
 
 
+
 .retreat1{
-    /*background-color:$ff;*/
+    background-color:$whitecolor;
     width: 200px;
     height: 300px;
     padding-left: 46px;
     padding-top: 30px;
+    margin:10px;
+
 }
-.retreat2{
-    width: 200px;
-    height: 300px;
-    /*border: $bborder;*/
-    padding-left: 46px;
-    padding-top: 30px;
-}
+// .retreat2{
+//     width: 200px;
+//     height: 300px;
+//     /*border: $bborder;*/
+    
+//     padding-left: 46px;
+//     padding-top: 30px;
+// }
 .text22{
     color:$gray;
     font-size: 20px;
@@ -43,10 +53,5 @@
     margin-right: 40px;
 }
 
-.bg-foot{
-    background-image:url("../../../assets/images/bg-foot.jpg");
-    height: 220px;
-    color: $whitecolor;
-    
-}
+
 
