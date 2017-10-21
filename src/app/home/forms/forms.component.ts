@@ -30,7 +30,7 @@ Registr(e) {
  
   
   if(username == 'root' && password == 'root') {
-    this.router.navigate(['']);//повертає на home
+    this.router.navigate(['']);
   }
  } 
 
