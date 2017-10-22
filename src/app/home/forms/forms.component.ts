@@ -13,7 +13,7 @@ export class FormsComponent implements OnInit {
   
 
   constructor(private router:Router) { }
-
+ form;
   ngOnInit() {console.log('hit');}
   MyFunction(){
     let testt = confirm("Is it true that 1+1=2?");
@@ -21,6 +21,7 @@ export class FormsComponent implements OnInit {
     alert( testt );
     
 }
+
 
 Registr(e) {
   e.preventDefault();
@@ -30,7 +31,10 @@ Registr(e) {
  
   
   if(username == 'root' && password == 'root') {
-    this.router.navigate(['']);
+   alert('You are on system');
+  }
+  else{
+    alert('Sorry, we cannot find u');
   }
  } 
 
