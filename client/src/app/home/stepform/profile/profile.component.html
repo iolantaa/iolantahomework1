@@ -1,0 +1,82 @@
+<div class="r1"><form  #generalForm="ngForm">
+  
+  <div>
+  <div class="input">
+  <label>Title:</label>
+  <input type="text" name='title' required minlength="10" [(ngModel)]="company.title" #title="ngModel">
+  <div *ngIf="title.errors && (title.dirty || title.touched)" class="alert alert-danger">
+  <div [hidden]="!title.errors.required">
+  Required!
+  </div>
+  <div [hidden]="!title.errors.minlength">
+  Title must be at least 10 charackters long!
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+  
+  <div>
+  <div class="input">
+  <label>Description:</label>
+  <input type="text" name='description' required maxlength="1000" [(ngModel)]="company.description" #description="ngModel">
+  <div *ngIf="description.errors && (description.dirty || description.touched)" class="alert alert-danger">
+  <div [hidden]="!decription.errors.required">
+  Required!
+  </div>
+  <div [hidden]="!decription.errors.maxlength">
+  Description must be less than 1000 charackters long!
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  <div >
+    <div class="input">
+    <label class="logo">Logo url:</label>
+    <input class="logob" type="file" accept=".jpg, .jpeg, .png" name='image' ngModel (change)="getFile($event)" #image="ngModel">
+    <div *ngIf="!imageloaded && (image.dirty || image.touched) " class="alert alert-danger">
+    <div>
+    Required!
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div>
+      <div class="input">
+      <label class="logo">Banner image url:</label>
+      <input class="logob" type="file" accept=".jpg, .jpeg, .png" name='image1' ngModel (change)="getFile1($event)" #image1="ngModel">
+      
+      </div>
+      </div>
+
+
+
+  <div>
+      <div class="input">
+      <label>Website:</label>
+      <input type="url" name='website' pattern="https?://....(?:\.[a-z].)" required  [(ngModel)]="company.website" #website="ngModel">
+      <div *ngIf="website.errors && (website.dirty || website.touched)" class="alert alert-danger">
+      <div [hidden]="!website.errors.required">
+      Website required!
+      </div>
+      <div [hidden]="!website.errors.pattern">
+       http://****.** or https://****.** 
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+
+  <div>
+  <div class="input">
+  <button [disabled]="!generalForm.form.valid" (click)="savegeneral()">Save</button>
+  </div>
+  </div>
+  </form></div>

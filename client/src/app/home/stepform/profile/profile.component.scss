@@ -1,0 +1,42 @@
+.r1{
+    margin-top:10px;
+   
+}
+.logo{
+    margin-left:130px;
+}
+.logob{
+    margin-left: 115px;
+}
+.input {
+    position: relative;
+	display: inline-table;
+	margin-top: 60px;
+ label {
+	position: absolute;
+	top: 0;
+	transform: translateY(-100%);
+	left: 10px;
+    color:blue;
+    font-size:20px;
+	padding: 2px 2px;
+}
+
+ input {
+	padding: 10px 20px;
+    font-size: 25px;
+    border-radius: 10%;
+	outline: 0;
+}
+	button{
+padding:10px;
+	font-size: 20px;
+    outline: 0;
+    background: orange;
+    color:white;
+    cursor:pointer;
+    &:hover{
+        background: green;
+    }
+	}
+}

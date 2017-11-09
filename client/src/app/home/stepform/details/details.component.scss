@@ -1,0 +1,36 @@
+
+.save{
+    padding:10px;
+	font-size: 20px;
+    outline: 0;
+    background: orange;
+    color:white;
+    cursor:pointer;
+    &:hover{
+        background: green;
+    }
+}
+
+
+.lbl{
+    transform: translateY(-100%);
+        color:blue;   
+        font-size: 20px;
+      margin-top:20px;
+        top: 0;
+     
+        left: 10px;	
+}
+.datepicker{
+    margin-top:-10px;
+    margin-bottom:30px;
+}
+.frm{
+    // margin-bottom:10px;
+    padding-left:100px;
+    padding-bottom: 10px;
+    border-radius: 10%;
+   
+    // margin-right:200px;
+    
+}

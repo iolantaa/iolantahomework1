@@ -1,0 +1,106 @@
+<form #detailsForm="ngForm">
+
+    <div class="cl">
+        <label class="lbl" style="margin-top:30px; margin-bottom:-60px;" >Created at:</label>
+        <div class="datepicker">
+        <dp-date-picker name="create"required [(ngModel)]="company.create" #create="ngModel"  ></dp-date-picker>
+        <div *ngIf="create.errors && (create.dirty || create.touched)" class="alert alert-danger">
+            <div [hidden]="!create.errors.required"> Required!</div>   
+        </div>
+      </div>
+   </div>
+        
+
+  <div>
+  
+  <label class="lbl">Country:</label>
+  <select class="frm" style="margin-right:135px; padding-left:20px;"  name="country" required [(ngModel)]="company.country" #country="ngModel">
+    <option value="Ukraine" >Ukraine</option>
+    <option value="Russia">Russia</option>
+    <option value="Poland">Poland</option>
+    <option value="Italy">Italy</option>
+    <option value="Other">Other</option>
+  </select>
+  <div *ngIf="country.errors && (country.dirty ||country.touched)" class="alert alert-danger">
+  <div [hidden]="!country.errors.required">
+ Rrequired!
+  
+  </div>
+  </div>
+</div>
+
+
+<div>
+  <label class="lbl" >Count of employees:</label>
+  <input class="frm" style="margin-right:270px; " type="number" name='emplo' required pattern="[0-9]*" [(ngModel)]="company.emplo"  #emplo="ngModel">
+  <div *ngIf="emplo.errors && (emplo.dirty || emplo.touched)" class="alert alert-danger">
+  <div [hidden]="!emplo.errors.pattern">
+  less than 0!
+  </div> 
+  <div [hidden]="!emplo.errors.required"> Required</div> 
+  </div>
+  </div>
+
+
+  <div>
+      
+      <label class="lbl">CEO of the company:</label>
+      <input class="frm" style="margin-right:280px; " type="text" name='seo' required minlength="5" [(ngModel)]="company.seo" #seo="ngModel">
+      <div *ngIf="seo.errors && (seo.dirty || seo.touched)" class="alert alert-danger">
+      <div [hidden]="!seo.errors.required">
+      Required!
+      </div>
+      <div [hidden]="!seo.errors.minlength">
+      CEO must be at least 5 charackters long!
+      </div>
+      </div>
+      </div>
+     
+      
+
+
+      <div>
+        
+          <label class="lbl">City:</label>
+          <input class="frm" style="margin-right:120px; " type="text" name='city' required  [(ngModel)]="company.city" #city="ngModel">
+          </div>
+          
+  
+          <div>
+          
+          <label class="lbl">Address Line:</label>
+          <input class="frm" style="margin-right:200px;" type="text" name='address' required [(ngModel)]="company.address" #address="ngModel">
+          <div *ngIf="address.errors && (address.dirty || address.touched)" class="alert alert-danger">
+          <div [hidden]="!title.errors.required">
+             Required!
+          </div>
+         
+          </div>
+          </div>
+        
+
+  
+
+ 
+
+
+  
+
+  
+
+
+  
+
+          <div>
+              <div class="input">
+              <button class="save"  [disabled]="!detailsForm.form.valid" (click)="savedetails()">Save</button>
+              </div>
+              </div>
+            </form>
+  
+  <!-- <div>
+  <div class="input">
+  <button  [disabled]="!detailsForm.form.valid" (click)="savedetails()">Save</button>
+  </div>
+  </div>
+  </form> -->

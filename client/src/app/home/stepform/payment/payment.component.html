@@ -1,0 +1,68 @@
+<form #paymentForm="ngForm">
+  <div class="input">
+  <div>
+  <label>Card number:</label>
+  <input type="number" name='cardnumber' pattern=".{16,16}" required  [(ngModel)]="company.cardnumber" #cardnumber="ngModel">
+  <div *ngIf="cardnumber.errors && (cardnumber.dirty || cardnumber.touched)" class="alert alert-danger">
+  <div [hidden]="!cardnumber.errors.required">
+  Required!
+  </div>
+  <div [hidden]="!cardnumber.errors.pattern">
+  Card number must be 16 characters long!
+  </div>
+  </div>
+  </div>
+  </div>
+  <div>
+  <div class="input">
+  <label>Month:</label>
+  <input type="number" name='month' required pattern="([0-9]|[1][0-2])" [(ngModel)]="company.month" #month="ngModel">
+  <div *ngIf="month.errors && (month.dirty || month.touched)" class="alert alert-danger">
+  <div [hidden]="!month.errors.required">
+  Required!
+  </div>
+  <div [hidden]="!month.errors.pattern">
+   Month should be between 1-12!
+  </div>
+  </div>
+  </div>
+  </div>
+  <div>
+  <div class="input">
+  <label>Year:</label>
+  <input type="number" name="year" required  pattern="([2][0][1][8-9]|[2][0][2][0-5])" [(ngModel)]="company.year" #year="ngModel">
+  <div *ngIf="year.errors && (year.dirty || year.touched)" class="alert alert-danger">
+  <div [hidden]="!year.errors.required">
+  Required!
+  </div>
+  <div [hidden]="!year.errors.pattern">
+  Year should be between 2018-2025!
+  </div>
+  </div>
+  </div>
+  </div>
+  <div>
+  <div class="input">
+  <label>CVC:</label>
+  <input type="number" name='cvc' required pattern=".{3,3}" [(ngModel)]="company.cvc" #cvc="ngModel">
+  <div *ngIf="cvc.errors && (cvc.dirty || cvc.touched)" class="alert alert-danger">
+  <div [hidden]="!cvc.errors.required">
+  Required!
+  </div>
+  <div [hidden]="!cvc.errors.pattern">
+  CVC should ne 3 characters long!
+  </div>
+  </div>
+  </div>
+  </div>
+  <div>
+  <div class="input">
+  <button [disabled]="!paymentForm.form.valid" (click)="savepayment()">Save</button>
+  </div>
+  </div>
+  <div>
+  <div class="input">
+  <button [disabled]="!company.step1saved || !company.step2saved || !company.step3saved" (click)="finish()">Finish</button>
+  </div>
+  </div>
+  </form>

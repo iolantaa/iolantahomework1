@@ -1,0 +1,29 @@
+.info{
+	margin-bottom: 40px;
+	align-items: left;
+	font-size: 32px;
+	color:blue;
+}
+.main{
+	font-size: 40px;
+	text-align: center;
+	color:red;
+}
+.home_ref{
+	text-align: center;
+	
+	a{
+	font-size: 36px;
+}
+button{
+	padding: 12px 24px;
+	font-size: 30px;
+    outline: 0;
+	background: orange;
+    color:white;
+    cursor:pointer;
+    &:hover{
+        background: green;
+    }
+}
+}

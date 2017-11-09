@@ -1,0 +1,21 @@
+
+<div class='regform'>
+  <div *ngIf="step>0 && step<4">
+  <a *ngIf="step==1" class='orange'><strong>1</strong></a>
+  <a *ngIf="step!=1 && !company.step1saved" class='grey'><strong>1</strong></a>
+  <a *ngIf=" step!=1 && company.step1saved" class='green'><strong>1</strong></a>
+  <a *ngIf="step==2" class='orange'><strong>2</strong></a>
+  <a *ngIf="step!=2 && !company.step2saved" class='grey'><strong>2</strong></a>
+  <a *ngIf="step!=2 && company.step2saved" class='green'><strong>2</strong></a>
+  <a *ngIf="step==3" class='orange'><strong>3</strong></a>
+  <a *ngIf="step!=3 && !company.step3saved" class='grey'><strong>3</strong></a>
+  <a *ngIf="step!=3 && company.step3saved" class='green'><strong>3</strong></a>
+  </div>
+  <br>
+  <app-profile *ngIf="step==1" [company]="company" (generalSaved)="savegeneral($event)"></app-profile>
+  <app-details *ngIf="step==2" [company]="company" (detailsSaved)="savedetails($event)"></app-details>
+  <app-payment *ngIf="step==3" [company]="company" (paymentSaved)="savepayment($event)" (allSaved)="finish($event)"></app-payment>
+  <app-info *ngIf="step==4" [company]="company"></app-info>
+  <button *ngIf="step>1 && step<4" (click)="gotoPage(false)">Prew</button>
+  <button *ngIf="step>0 && step<3" (click)="gotoPage(true)">Next</button>
+  </div>

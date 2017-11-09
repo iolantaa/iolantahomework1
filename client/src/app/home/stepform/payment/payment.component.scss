@@ -1,0 +1,36 @@
+.input {
+	position: relative;
+	display: inline-table;
+	margin-top: 20px;
+ label {
+	position: absolute;
+	top: 0;
+	transform: translateY(-100%);
+	font-size: 20px;
+	left: 10px;
+	color:blue;
+	padding: 5px 2px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+ input {
+	padding: 10px 20px;
+	font-size: 25px;
+	border-radius: 10%;
+	margin-top:25px;
+	margin-bottom:20px; 
+	outline: 0;
+}
+	button{
+        padding:10px;
+        font-size: 20px;
+        outline: 0;
+        background: orange;
+        color:white;
+        cursor:pointer;
+        &:hover{
+            background: green;
+        }
+   
+	}
+}
