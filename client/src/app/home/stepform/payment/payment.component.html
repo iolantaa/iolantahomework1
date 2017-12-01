@@ -1,5 +1,16 @@
 <form #paymentForm="ngForm">
   <div class="input">
+      <div class="input">
+          <div>
+          <label>Card number:</label>
+          <input type="text" name='email'  required  [(ngModel)]="company.email" #email="ngModel">
+          <div *ngIf="cardnumber.errors && (cardnumber.dirty || cardnumber.touched)" class="alert alert-danger">
+          <div [hidden]="!cardnumber.errors.required">
+          Email required!
+          </div>
+          </div>
+          </div>
+          </div>
   <div>
   <label>Card number:</label>
   <input type="number" name='cardnumber' pattern=".{16,16}" required  [(ngModel)]="company.cardnumber" #cardnumber="ngModel">
@@ -62,7 +73,8 @@
   </div>
   <div>
   <div class="input">
-  <button [disabled]="!company.step1saved || !company.step2saved || !company.step3saved" (click)="finish()">Finish</button>
+      <button  (click)="finish()">Finish</button>
+  <!-- <button [disabled]="!company.step1saved || !company.step2saved || !company.step3saved" (click)="finish()">Finish</button> -->
   </div>
   </div>
   </form>

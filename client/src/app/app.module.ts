@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {DpDatePickerModule} from 'ng2-date-picker';
 import { AppComponent } from './app.component';
@@ -21,11 +22,13 @@ import { ConnectsComponent } from './home/connects/connects.component';
 import { ContactsphotoComponent } from './home/contactsphoto/contactsphoto.component';
 import { EndsComponent } from './home/ends/ends.component';
 import { FormsComponent } from './home/forms/forms.component';
+import { UserService } from './user/user.service';
 import { StepformComponent } from './home/stepform/stepform.component';
 import { ProfileComponent } from './home/stepform/profile/profile.component';
 import { DetailsComponent } from './home/stepform/details/details.component';
 import { PaymentComponent } from './home/stepform/payment/payment.component';
 import { InfoComponent } from './home/stepform/info/info.component';
+import { TableComponent } from './home/table/table.component';
 
 
 @NgModule({
@@ -52,18 +55,32 @@ import { InfoComponent } from './home/stepform/info/info.component';
     DetailsComponent,
     PaymentComponent,
     InfoComponent,
+    TableComponent,
    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     DpDatePickerModule,
+    HttpClientModule,
    
    
     RouterModule.forRoot([
       {
         path: 'form',
         component: FormsComponent
+      },
+      
+      {
+        path: '',
+        pathMatch: 'full',
+        component: HomeComponent
+      }
+    ]),
+    RouterModule.forRoot([
+      {
+        path: 'table',
+        component: TableComponent
       },
       
       {

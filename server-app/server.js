@@ -3,6 +3,7 @@ let app=new express();
 let port=8000;
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
+let stripe=require('stripe')('sk_test_BQokikJOvBiI2HlWgH4olfQ2');
 let router = require('./app/routers/api.js');
 mongoose.connect('mongodb://localhost/company');
 app.use(function(req,res,next){

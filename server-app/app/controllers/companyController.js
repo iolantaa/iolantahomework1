@@ -22,13 +22,13 @@ exports.getOne = function(req,res){
 	});
 };
 exports.updateCompan=function(req,res){
-	Compan.findOneAndUpdate({_id:req.param.id},req.body,function(err,compan){
+	Compan.findOneAndUpdate({_id:req.params.id},req.body,function(err,compan){
 		if(err)
 			return res.status(400).send(err);
 		res.json(compan);
 	});
 };
-exports.deleteCompan=function(req,res){ Compan.remove({_id:req.param.id},function(err,compan)
+exports.deleteCompan=function(req,res){ Compan.remove({_id:req.params.id},function(err,compan)
 { if(err)
 			return res.send(err);
 		res.json({message:'Company has been successfully removed'});
@@ -42,18 +42,28 @@ function cryptPass(password,callback){
 		});
 	});
 };
-
 exports.createCompan=function(req,res){
-	cryptPass(req.body.password,function(err,password){
-		if(err) return req.send(err);
-		var companData=req.body;
-		companData.password=password;
-		var newCompan=new Compan(companData);
-		newCompan.save(function(err,compan)
-		{
-			if(err)
-				return res.send(err);
-			res.send(compan);
-		});
-	});
+	if(!req.body) return res.sendStatus(400);
+	var companData=req.body;
+	var newCompan=new Compan(companData);
+	newCompan.save(function(err,product){
+		if(err)
+			return res.send(err);
+		res.send(compan);
+	
+});
 };
+// exports.createCompan=function(req,res){
+// 	cryptPass(req.body.password,function(err,password){
+// 		if(err) return req.send(err);
+// 		var companData=req.body;
+// 		companData.password=password;
+// 		var newCompan=new Compan(companData);
+// 		newCompan.save(function(err,compan)
+// 		{
+// 			if(err)
+// 				return res.send(err);
+// 			res.send(compan);
+// 		});
+// 	});
+// };

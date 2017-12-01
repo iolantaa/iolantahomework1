@@ -1,6 +1,8 @@
 let mongoose=require('mongoose');
 let Schema=mongoose.Schema;
+ObjectId=Schema.ObjectId;
 let companySchema=new Schema({
+    _id: { type:ObjectId, auto:true},
     title:{type:String,required:true, minlength:10},
     description:{type:String,required:true, maxlength:1000},
     image:{type:String, required:true},
@@ -12,10 +14,14 @@ let companySchema=new Schema({
     seo:{type:String,required:true,minLength:5},
     city:{type:String,default:''},
     address:{type:String,required:true},
-    card_number:{type:Number,required:true,minLength:16,maxLength:16},
-	card_month:{type:Number,required:true, min:0,max:12},
-	card_year:{type:Number,required:true,min:2017 ,max:2026},
-	card_cvc:{type:Number,required:true,minLength:3,maxLength:3},
+    cardnumber:{type:Number,required:true,length:16},
+    month:{type:Number,required:true, min:0,max:12},
+    year:{type:Number,required:true,min:2017 ,max:2026},
+    cvc:{type:Number,required:true,length:3},
+    // card_number:{type:Number,required:true,minLength:16,maxLength:16},
+	// card_month:{type:Number,required:true, min:0,max:12},
+	// card_year:{type:Number,required:true,min:2017 ,max:2026},
+	// card_cvc:{type:Number,required:true,minLength:3,maxLength:3},
 	create_at:{type:Date,default:Date.Now}
     
 	
