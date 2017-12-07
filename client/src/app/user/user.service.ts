@@ -4,6 +4,7 @@ import {Observable } from 'rxjs/Observable';
 import {Subject } from 'rxjs';
 
 const USER_DATA_URL='http://localhost:8000/app/v1/company';
+const PAYMENT_URL='http://localhost:8000/app/v1/stripe';
 @Injectable()
 
 export class UserService {
@@ -39,9 +40,9 @@ constructor(private http:HttpClient) {
   getUsers():Observable<any[]>{
     return this.users.asObservable();
   }
-  setUser(API_URL,compan)
+  setUser(API_URL,company)
   {
-    return this.http.post(API_URL, compan)
+    return this.http.post(API_URL, company)
       .forEach(res => {
         const result = res;
         console.log('result', result);});
@@ -49,8 +50,11 @@ constructor(private http:HttpClient) {
   deleteUser(id){
     this.http.delete(USER_DATA_URL+'/'+id).subscribe(id=>console.log(id));
   }
-  updateUser(compan){
-    this.http.put(USER_DATA_URL+'/'+compan["_id"],compan).subscribe(compan=>console.log(compan));
+  updateUser(company){
+    this.http.put(USER_DATA_URL+'/'+company["_id"],company).subscribe(company=>console.log(company));
+  }
+  pay(payment){
+    return this.http.post(PAYMENT_URL,payment).subscribe((payment)=>console.log(payment));
   }
  
 }

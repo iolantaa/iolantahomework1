@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import {DatePickerComponent} from 'ng2-date-picker';
 import {HttpClient } from '@angular/common/http';
@@ -15,12 +15,14 @@ import {UserService} from '../../user/user.service';
 })
 
 export class StepformComponent implements OnInit {
+  @Input() updatecompany:object;
   public step1saved=false;
   public step2saved=false;
   public step3saved=false;
  
   public step=1;
   public company: object={
+    _id:'',
      title: '',
      description:'',
       image:'',
@@ -45,6 +47,7 @@ export class StepformComponent implements OnInit {
 
  API_URL='http://localhost:8000/app/v1/company';
 ngOnInit() {
+  this.company=this.updatecompany ? this.updatecompany:{};
 }
   gotoPage(isNext){
     this.step+=(isNext)?1:-1;
@@ -65,9 +68,9 @@ ngOnInit() {
     // this.company["step2saved"]=true;
     //  console.log(this.company);
     }
-    savepayment(product: object)
+    savepayment(company: object)
     {
-    this.company = product;
+    this.company = company;
     this.step3saved=true;
     console.log(this.company);
     // this.company["step3saved"]=true;

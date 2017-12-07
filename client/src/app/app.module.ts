@@ -70,12 +70,20 @@ import { TableComponent } from './home/table/table.component';
         path: 'form',
         component: FormsComponent
       },
-      
+      {
+        path:'shop',
+        component: StepformComponent
+      },
+      {
+        path: 'table',
+        component: TableComponent
+      },
       {
         path: '',
         pathMatch: 'full',
         component: HomeComponent
       }
+
     ]),
     RouterModule.forRoot([
       {
@@ -98,7 +106,7 @@ import { TableComponent } from './home/table/table.component';
       }
     ])
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

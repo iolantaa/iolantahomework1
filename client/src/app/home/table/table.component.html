@@ -1,6 +1,10 @@
 <div *ngFor="let us of users">
 	<p>{{us.title}}</p>
 	<button  (click)="deleteUser(us._id)">Delete</button>
-	<input type="text" [(ngModel)]="us.title">
+	<button  (click)="sendtoform(us)">Update</button>
+	<!-- <input type="text" [(ngModel)]="us.title"> -->
+	<app-stepform *ngIf="us._id==this.id" [updatecompany]="us"></app-stepform>
+	</div>
+<!-- </div>
 	<button  (click)="updateUser(us)">Delete</button>
-</div>
+</div> -->

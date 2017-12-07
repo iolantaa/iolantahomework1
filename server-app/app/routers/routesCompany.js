@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-companController=require('../controllers/companyController');
+companyController=require('../controllers/companyController');
 router.post('/',companyController.createCompan);
-router.get('/',companyController.getCompany);
+router.get('/',companyController.getCompanys);
 router.get('/:id',companyController.getOne);
-router.put('/:id',companyController.updateCompan);
-router.delete('/:id',companyController.deleteCompan);
+router.put('/:id',companyController.updateCompany);
+router.delete('/:id',companyController.deleteCompany);
 module.exports=router;

@@ -1,34 +1,34 @@
 let mongoose = require('mongoose');
-var companDirectory = require('../models/company');
-var Compan = mongoose.model('company'),bcrypt=require('bcryptjs');
-exports.getCompany = function(req,res)
+var companyDirectory = require('../models/company');
+var Company = mongoose.model('company'),bcrypt=require('bcryptjs');
+exports.getCompanys = function(req,res)
 {
-	Compan.find({},'title',function(err,company)
+	Company.find({},function(err,companys)
 	{
 		if(err)
 			return res.send(err);
-		res.json(company);
+		res.json(companys);
 	});
 };
 exports.getOne = function(req,res){
-	Compan.findOne(req.param.id,function(err,compan){
+	Company.findOne(req.param.id,function(err,company){
 		if(!company){
 			res.status(404).send({message:'Company not found'});
 		} else{
 			if(err)
 				return res.send(err);
-			res.json(compan);
+			res.json(company);
 		}
 	});
 };
-exports.updateCompan=function(req,res){
-	Compan.findOneAndUpdate({_id:req.params.id},req.body,function(err,compan){
+exports.updateCompany=function(req,res){
+	Company.findOneAndUpdate({_id:req.params.id},req.body,function(err,company){
 		if(err)
 			return res.status(400).send(err);
-		res.json(compan);
+		res.json(company);
 	});
 };
-exports.deleteCompan=function(req,res){ Compan.remove({_id:req.params.id},function(err,compan)
+exports.deleteCompany=function(req,res){ Company.remove({_id:req.params.id},function(err,company)
 { if(err)
 			return res.send(err);
 		res.json({message:'Company has been successfully removed'});
@@ -42,28 +42,28 @@ function cryptPass(password,callback){
 		});
 	});
 };
-exports.createCompan=function(req,res){
+exports.createCompany=function(req,res){
 	if(!req.body) return res.sendStatus(400);
-	var companData=req.body;
-	var newCompan=new Compan(companData);
-	newCompan.save(function(err,product){
+	var companyData=req.body;
+	var newCompany=new Company(companyData);
+	newCompany.save(function(err,company){
 		if(err)
 			return res.send(err);
-		res.send(compan);
+		res.send(company);
 	
 });
 };
-// exports.createCompan=function(req,res){
-// 	cryptPass(req.body.password,function(err,password){
-// 		if(err) return req.send(err);
-// 		var companData=req.body;
-// 		companData.password=password;
-// 		var newCompan=new Compan(companData);
-// 		newCompan.save(function(err,compan)
-// 		{
-// 			if(err)
-// 				return res.send(err);
-// 			res.send(compan);
-// 		});
-// 	});
-// };
+exports.createCompan=function(req,res){
+	
+		
+		var companData=req.body;
+	
+		var newCompany=new Company(companData);
+		newCompany.save(function(err,compan)
+		{
+			if(err)
+ 				return res.send(err);
+ 			res.send(compan);
+
+ 	});
+ };

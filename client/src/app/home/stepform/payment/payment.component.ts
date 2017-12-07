@@ -1,5 +1,6 @@
 import { Component, OnInit,Input, Output ,EventEmitter } from '@angular/core';
 import {Router} from '@angular/router';
+import {UserService} from '../../../user/user.service';
 
 @Component({
   selector: 'app-payment',
@@ -12,8 +13,16 @@ export class PaymentComponent implements OnInit {
   
   @Output() paymentSaved=new EventEmitter();
   @Output() allSaved=new EventEmitter();
+  public payment={
+    email:'',
+    number:'',
+    month:'',
+    year:'',
+    code:'',
+    price:''
+  };
   
-    constructor(private router:Router) {
+    constructor(private router:Router, private userService:UserService) {
     }
   
 
@@ -25,5 +34,18 @@ export class PaymentComponent implements OnInit {
   finish()
   {
     this.allSaved.emit(this.company);
+  }
+  update(){
+    this.userService.updateUser(this.company);
+  }
+  pay(company){
+  this.payment["email"]=this.company["email"];
+  this.payment["number"]=this.company["cardnumber"];
+  this.payment["year"]=this.company["year"];
+  this.payment["month"]=this.company["month"];
+  this.payment["code"]=this.company["cvc"];
+  this.payment["price"]=this.company["price"];
+  console.log(this.payment);
+  this.userService.pay(this.payment);
   }
 }
