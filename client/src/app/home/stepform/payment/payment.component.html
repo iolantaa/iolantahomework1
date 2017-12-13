@@ -91,24 +91,47 @@
   </div>
   </div>
   </div>
-  <div>
+  <!-- <div>
   <div class="input">
-  <button  (click)="update()">Update</button>
+  <button  (click)="update()">Update</button> -->
   <!-- <button [disabled]="!paymentForm.form.valid" (click)="savepayment()">Save</button> -->
-  </div>
-  </div>
+  <!-- </div>
+  </div> -->
 
 
-  <div>
+  <!-- <div>
   <div class="input">
-      <button  (click)="finish()">Regist</button>
+      <button  (click)="finish()">Regist</button> -->
   <!-- <button [disabled]="!company.step1saved || !company.step2saved || !company.step3saved" (click)="finish()">Finish</button> -->
-  </div>
+  <!-- </div>
   </div>
   <div>
         <div class="input">
         <button  (click)="pay(company)">Pay</button>
         </div>
-        </div>
+        </div> -->
+        <div>
+            <div class="input">
+            <button [disabled]="!paymentForm.form.valid" (click)="savepayment()">Save</button>
+            </div>
+            </div>
+
+            <div>
+            <div class="input">
+            <button  (click)="update()">Update</button>
+            </div>
+            </div>
+
+            <div>
+            <div class="input">
+            <button  (click)="finish()">Register</button>
+            </div>
+            </div>
+            
+            <div>
+            <div class="input">
+            <button  (click)="pay(product)">Pay</button>
+            </div>
+            </div>
         
   </form>

@@ -18,8 +18,8 @@ export class PaymentComponent implements OnInit {
     number:'',
     month:'',
     year:'',
-    code:'',
-    price:''
+    cvc:'',
+    amount:''
   };
   
     constructor(private router:Router, private userService:UserService) {
@@ -43,8 +43,8 @@ export class PaymentComponent implements OnInit {
   this.payment["number"]=this.company["cardnumber"];
   this.payment["year"]=this.company["year"];
   this.payment["month"]=this.company["month"];
-  this.payment["code"]=this.company["cvc"];
-  this.payment["price"]=this.company["price"];
+  this.payment["cvc"]=this.company["cvc"];
+  this.payment["amount"]=this.company["price"];
   console.log(this.payment);
   this.userService.pay(this.payment);
   }

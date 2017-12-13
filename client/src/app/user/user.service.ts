@@ -54,7 +54,9 @@ constructor(private http:HttpClient) {
     this.http.put(USER_DATA_URL+'/'+company["_id"],company).subscribe(company=>console.log(company));
   }
   pay(payment){
-    return this.http.post(PAYMENT_URL,payment).subscribe((payment)=>console.log(payment));
+    return this.http.post(PAYMENT_URL,payment).subscribe(payment=>console.log(payment));
+   
+
   }
  
 }
